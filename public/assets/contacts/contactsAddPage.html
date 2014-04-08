@@ -1,0 +1,30 @@
+<h2>Contacts</h2>
+<form novalidate  class="pure-form pure-form-aligned">
+   <fieldset>
+      <legend>{{legend_title}}</legend>
+      <div class="pure-control-group">
+         <label for="first">First Name</label>
+         <input id="first"type='text' ng-model="contact.name.first"/>
+      </div>
+      <div class="pure-control-group">
+         <label for="last">Last Name</label>
+         <input id="last"type='text' ng-model="contact.name.last"/>
+      </div>
+      <div class="pure-control-group">
+         <label for="email">Email</label>
+         <input id="email"type='text' ng-model="contact.email"/>
+      </div>
+      <div class="pure-control-group">
+         <label for="num">Phone Number</label>
+         <input id="num"type='text' ng-model="contact.number"/>
+      </div>
+      <div class="pure-control-group">
+         <label for="num">Comment</label>
+         <textarea ng-model="contact.notes"></textarea>
+      </div>
+      <div class="pure-controls"> 
+         <a class="pure-button" href="#/contacts">Back to list</a>
+         <button class="pure-button pure-button-primary" ng-click="save()">Save</button>
+      </div>
+   </fieldset>
+</form>

@@ -1,0 +1,30 @@
+<h2>Edit</h2>
+<form ng-submit="submit()" novalidate  class="pure-form pure-form-aligned">
+   <fieldset>
+      <div class="pure-control-group">
+         <label for="title">Category</label>
+         <select id="my_form" ng-model="option" ng-options="c.category group by c.group for c in options"options-disabled="c.isinuse for c in options" >
+            <option>- - Make Selection - -</option>
+         </select>
+      </div>
+      <div class="pure-control-group">
+         <label for="title">Title</label>
+         <input id="title"type='text' ng-model="ad.title"/>
+      </div>
+      <div class="pure-control-group">
+         <label for="price">Price</label>
+         <input id="price" type="text"  ng-model="ad.price"/>
+      </div>
+      <div ng-include src="template.url"></div>
+      <div class="pure-control-group">
+         <label for="detail">Description</label>
+         <textarea id="detail" ng-model="ad.text"  style='min-height:150px; min-width:400px; resize:vertical;'>{{ad.text}}</textarea>
+      </div>
+      <div class="pure-controls"> 
+         <button class="pure-button" ng-click="reset()">RESET</button>
+         <button class="pure-button" ng-click="update(ad)">SAVE</button>
+      </div>
+   </fieldset>
+</form>
+<pre class="code">form = {{ad | json}}</pre>
+<pre class="code">master = {{master | json}}</pre>

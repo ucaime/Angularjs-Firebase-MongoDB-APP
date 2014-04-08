@@ -1,0 +1,9 @@
+<h2>Profile </h2>
+<img class="post-avatar" alt="Tilo Mitra's avatar" height="48" width="48" ng-src="{{user.avatar}}">
+<p> Welcome "<strong>{{user.email}}</strong>" to the protected page!</p>
+<p>Your user ID is: {{user._id.$id}}</p>
+<div>
+   Update your avatar
+   <br>choose a single file: <input type="file" name="file" ng-file-select="onFileSelect($files)">
+</div>
+{{hello}}

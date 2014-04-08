@@ -1,0 +1,17 @@
+<h2>Classifieds</h2>
+<a href="#/new"><button class="pure-button">Add new</button></a><br>
+<div>
+   <table>
+      <tr>
+         <th>title</th>
+         <th>price</th>
+         <th>text</th>
+      </tr>
+      <tr ng-repeat="ad in ads">
+         <td><a href="#/view/{{ad._id.$id}}">{{ad.title | truncate:20 }}</a></td>
+         <td>{{ad.price}}</td>
+         <td>{{ad.text | truncate:35 }}</td>
+         <td><a href="#/edit/{{ad._id.$id}}">edit </a></td>
+      </tr>
+   </table>
+</div>

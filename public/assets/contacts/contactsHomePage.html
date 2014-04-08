@@ -1,0 +1,19 @@
+<h2>Contacts</h2>
+<a href="#/contacts/add" class="pure-button">Add a new contact</a>
+<div style="height:10px;"></div>
+<table class="pure-table pure-table-horizontal">
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Email</th>
+         <th>Phone Number</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr ng-repeat="contact in contacts">
+         <td><a href="#/contacts/view/{{contact.clean_name}}">{{contact.name.first}} {{contact.name.last}}</a></td>
+         <td>{{contact.email}}</td>
+         <td>{{contact.number | tel}}</td>
+      </tr>
+   </tbody>
+</table>
