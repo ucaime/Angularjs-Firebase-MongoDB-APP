@@ -48,7 +48,7 @@
                         <input type="hidden" name="id" value="dsfsdfsdf">
                         <div>
                             <button type="submit" class="button-small pure-button pure-button-primary">Submit</button> 
-                            <i style="color: #5aba59;" ng-class="{hide: showCheckMark }" class="fa fa-check"></i>
+                            <i style="color: #5aba59;" ng-cloak ng-class="{hide: showCheckMark }" class="fa fa-check"></i>
                         </div>
                     </fieldset>
                 </form>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 
-                <div ng-show="newComment" class="popup">
+                <div ng-show="newComment" class="popup" ng-cloak>
                   <div class="wrapper">
                        <a href="" ng-click="goToComment()">{{numOfNewComments}} new comment<span ng-show="numOfNewComments>1">s</span></a>
                     </div>
