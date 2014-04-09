@@ -29,7 +29,7 @@
 		$scope.save = function () {
 			$scope.contact.$save(function (updated_contact) {
 				$scope.contact = updated_contact;
-				$location.path('/view/' + updated_contact.clean_name).replace();
+				$location.path('/contacts/view/' + updated_contact.clean_name).replace();
 			});
 		};
 	}])

@@ -84,24 +84,7 @@
 
         $scope.showCheckMark = true;
         $scope.timeX = '1393991888000';
-        // var commentsRef = new Firebase("https://sardor.firebaseio.com/" + itemID);
-        // //$scope.comments = $firebase(commentsRef);
-       
-        // // console.log($scope.comments )
-        // var last10Comments = commentsRef.limit(10);
 
-        // //Render Comments
-        // last10Comments.on('child_added', function (snapshot) {
-        //     var comment = snapshot.val();
-        //     console.log('child_added called');
-
-
-        // });
-
-        // last10Comments.on('value', function (snapshot) {
-        //     var comment = snapshot.val();
-        //     console.log('value called');
-        // })
 
 
         var loadedLength = 0;
@@ -117,9 +100,9 @@
             $scope.hideSpinner=false;
         });
          var elementPosistion=0
-        $scope.$on('NOTVISIBLE', function(event,message) {
+        $scope.$on('COMMENT_HIDDEN', function(event,message) {
             elementPosistion = message;
-            console.log("NOTVISIBLE ------------ " + message)
+            //console.log("NOTVISIBLE ------------ " + message)
             if(loadedLength <= numberOfComments) { // 5 < 6
                 console.log("NEW **** " );
                 $scope.newComment=true;
@@ -179,18 +162,52 @@
             link: function (scope, element, attr) {
 
                 var windowHeight = viewport();
-                var elementPosistion = element[0].offsetTop
+                var elementPosistion = element[0].offsetTop;
+
+
+                var documentHeight = window.innerHeight;
+                var windowHeight = documentHeight;
+                var scrollTop = 0;
+                var topFoldOffset = scrollTop;
+                var bottomFoldOffset = (topFoldOffset + windowHeight);
+                var height = null;
+
+                function isVisible(topFoldOffset, bottomFoldOffset) {
+                        // If the element is not visible because it
+                        // is hidden, don't bother testing it.
+                        if (element.css('display') === 'none') {
+                            //console.log("not visisble")
+                            return (false);
+                        }
+                        // If the height has not yet been calculated,
+                        // the cache it for the duration of the page.
+                        if (height === null) {
+                            height = element.height;
+                        }
+                        // Update the dimensions of the element.
+                        var top = element[0].getBoundingClientRect().top;
+                        var bottom = (top + height);
+                        // Return true if the element is:
+                        // 1. The top offset is in view.
+                        // 2. The bottom offset is in view.
+                        // 3. The element is overlapping the viewport.
+                        return (
+                            (
+                                (top <= bottomFoldOffset) &&
+                                (top >= topFoldOffset)
+                            )
+                        );
+                }
 
 
                 var v = '';
-                if(windowHeight < elementPosistion  ) {
-                    v = 'not visible';
+                if( ! isVisible(topFoldOffset, bottomFoldOffset)  ) {
 
-                    scope.$emit('NOTVISIBLE',elementPosistion);
+
+                    scope.$emit('COMMENT_HIDDEN',elementPosistion);
 
                 }
-
-                console.log( elementPosistion + ' ' +windowHeight + ' ' + v);
+                console.log( isVisible(topFoldOffset, bottomFoldOffset) )
                 
             }
         }
