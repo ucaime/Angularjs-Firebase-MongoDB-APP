@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="" ng-app="homeApp">
+<div class="">
     <h2>Item page</h2>
 
 
