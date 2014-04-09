@@ -186,7 +186,9 @@ color: #0088cc;
 text-decoration: none;
 }
 
-
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 
 .popup{
   position:fixed;

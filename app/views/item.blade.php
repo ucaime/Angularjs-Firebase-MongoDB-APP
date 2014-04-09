@@ -69,7 +69,7 @@
                        <a href="" ng-click="goToComment()">{{numOfNewComments}} new comment<span ng-show="numOfNewComments>1">s</span></a>
                     </div>
                 </div>
-                <div class="bubble-list" >
+                <div class="bubble-list" ng-cloak>
                     <div ng-repeat="bubble in comments" class="bubble clearfix" is-visible>
                         <img ng-src="{{bubble.avatar}}">
                         <div class="bubble-content">
