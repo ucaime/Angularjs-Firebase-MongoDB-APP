@@ -6,13 +6,13 @@
     <title>Laravel Authentication Demo</title>
 
      <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
+     <link href="/css/pure/base.css"             rel="stylesheet">
+     <link href="/css/pure/pure-style.css"       rel="stylesheet">
      <link href="/css/media/normal-screen.css"   rel="stylesheet" />
      <link href="/css/media/small-screen.css"    rel="stylesheet" media="screen and (max-width: 600px)" />
      <link href="/css/media/medium-screen.css"   rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 900px)" />
      <link href="/css/media/big-screen.css"      rel="stylesheet" media="screen and (min-width: 900px)" />
-     <link href="/css/pure/base.css"             rel="stylesheet">
-     <link href="/css/pure/pure-style.css"       rel="stylesheet">
+     
 
      <link href="http://yui.yahooapis.com/pure/0.4.2/buttons-min.css" rel="stylesheet" >
      <link href="http://yui.yahooapis.com/pure/0.4.2/tables-min.css" rel="stylesheet">

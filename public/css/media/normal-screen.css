@@ -7,6 +7,10 @@ body {
 a img {
     border: none;
 }
+img.post-avatar {
+    width: 48px;
+    height: 48px;
+}
 
 a {
     color: #0000FF;

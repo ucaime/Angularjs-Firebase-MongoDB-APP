@@ -17,7 +17,7 @@
                             $avatar = ( isset($ad["avatar"]) ? $ad["avatar"] : "http://purecss.io/img/common/tilo-avatar.png" ); 
                             
                         ?>
-                        <img class="post-avatar" alt="Tilo Mitra's avatar" height="48" width="48" src="<?php echo $avatar; ?>">
+                        <img class="post-avatar" alt="Tilo Mitra's avatar" src="<?php echo $avatar; ?>">
 
                         <h2 class="post-title"><?php echo $ad['title']; ?> </h2>
 

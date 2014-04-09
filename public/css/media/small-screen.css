@@ -19,7 +19,17 @@
 	  zoom: 1;
 	  padding: 6px 20px;
 }*/
-
+.post-title {
+font-size: 1.3em;
+}
+.post-description {
+  font-family: "MuseoSans-300", arial, sans-serif;
+line-height: 1.3em;
+}
+img.post-avatar {
+    width: 38px;
+    height: 38px;
+}
 .pure-help-inline > .pure-button {
   display: inline-block;
   *display: inline;
